@@ -1,7 +1,7 @@
 import os
 import cv2
 import matplotlib.pyplot as plt
-from edge_detector import EdgeDetector
+from canny_edge_app.edge_detector import EdgeDetector
 from pathlib import Path
 
 
