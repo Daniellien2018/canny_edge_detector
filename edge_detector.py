@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 class EdgeDetector:
     """Class for the Edge Detector"""
-    def __init__(self, threshold1, threshold2):
+    def __init__(self, threshold1, threshold2, blur_ksize=(5,5)):
         """
         Initialize the Edge Detector with default threshold values for Canny Edge Detector
         
@@ -13,6 +13,7 @@ class EdgeDetector:
         """
         self.threshold1 = threshold1
         self.threshold2 = threshold2
+        self.blur_ksize = blur_ksize
 
     def get_edges(self, image):
         """
@@ -23,7 +24,8 @@ class EdgeDetector:
         Returns: 
             edges (numpy.ndarray): Edge-detected image as NumPy array.
         """
-        edges = cv2.Canny(image, self.threshold1, self.threshold2 )
+        blurred_image = cv2.GaussianBlur(image, self.blur_ksize, 0)
+        edges = cv2.Canny(blurred_image, self.threshold1, self.threshold2 )
         return edges
     
     def set_thresholds(self, threshold1, threshold2):
