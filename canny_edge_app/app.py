@@ -22,6 +22,10 @@ def upload():
     if file.filename == '':
         return "No selected file"
     if file:
+        threshold1 = int(request.form.get('threshold1', 100))
+        threshold2 = int(request.form.get('threshold2', 100))
+        edge_detector = EdgeDetector(threshold1=threshold1, threshold2=threshold2)
+        
         # Read the image file
         image = cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_UNCHANGED)
         # Perform edge detection
