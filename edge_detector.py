@@ -24,8 +24,23 @@ class EdgeDetector:
         Returns: 
             edges (numpy.ndarray): Edge-detected image as NumPy array.
         """
+        # Convert to grayscale if image is colored
+        if len(image.shape) == 3:
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # Normalize the image --> don't necessarily want to do this 
+        # image = cv2.normalize(image, None, 0, 255, cv2.NORM_MINMAX)
+
+        # Apply Gaussian Blur
         blurred_image = cv2.GaussianBlur(image, self.blur_ksize, 0)
-        edges = cv2.Canny(blurred_image, self.threshold1, self.threshold2 )
+        
+        # Apply Canny Edge Detection
+        edges = cv2.Canny(blurred_image, self.threshold1, self.threshold2)
+        
+        # Apply morphological operations to clean up edges
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+        edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
+
         return edges
     
     def set_thresholds(self, threshold1, threshold2):
