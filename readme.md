@@ -3,53 +3,66 @@
 ## Overview:
     Given a single image, return the edges of the image using canny edge detection
 
-What i wnat to do is compare different thresholds with canny, this will help me understand thresholding
-The goal of this project is to help me understand how thresholding affects canny 
+## Goals:
+- Understand how Canny Edge Detection works via double thresholding and Hysteresis.
+
+- Understand the Guassian Blue Operation in respect to filtering, smoothing, and noise reduction (Hysteresis )
+
+- Visualize Images with edges. 
+
+- Practice application development.
+
+## Potential Future Goals:
+- Compare Canny with other Edge Detection Methods (Laplacian, Sobel, Prewitt)
+ 
+
+Plan:
+
+## MVPs:
+- Edge Detector: Given a photo as input, draw edges on the image (Done)
+
+- Threshold Parameters: Be able to adjust thresholding on detection (Done)
+
+- Side by Side Detection: visualize two images side by side, be able to adjust params for this. (Done)
+
+- 
+
+## Edge Cases / Issues to Fix
+
+- Error handling for when the file passsed is not an image
+
 
 Two directions
 1) Option 1 is to input my own thresholds
 2) Option 2 is to have a spread of thresholds 
 3) be able to add number of images shown?
 
-Hard
-4) make a sliding bar illustrating how it is shown 
-
 ### Features:
-- be able to play with thresholding? 
-- Maybe make this a web app? 
-- a simple drag and drop onto a file on a web app and it will produce the edges to the right?
-- I can implement full stack features this way 
-
-
-
-Edge cases:
-- accept multiple formats 
-
-
-Common thresholds 
-- 255, 255/3  = 85
--200,100,
-250,50
-
-
-
-Steps
-- Create Virtual env (pip freeze)
-
-- pip install -r requirements.txt
-
-
-
-1) is logic for building the canny edge detector, i've done this before
-
-    by the end of 1 i should be able to give an input and return and output 
-
 
 
 ### Enhancements (Later)
 - Adjustable Params
 - Multiple Input formats
 - Real-Time Processing 
+- make a sliding bar for threshold adjustment
+- Drag and drop imagesd
+- Custom Canny Algorithm from scratch 
+- Add an option to decide on the edge detector method, this way I can compare and contract --> make a separate page for each detector 
+- Make this like an educational App
+
+Edge Detectioin 
+- splash page
+--canny
+--sobel 
+--prewitt
+--laplacian
+
+
+### Steps
+- Create Virtual env (pip freeze)
+
+- pip install -r requirements.txt
+
 cap = cv2.VideoCapture(0)
 while(True):
     ret, frame = cap.read()
