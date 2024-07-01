@@ -41,10 +41,10 @@ Two directions
 
 
 ### Enhancements (Later)
-- Adjustable Params
+- Adjustable Params (Done)
 - Multiple Input formats
 - Real-Time Processing 
-- make a sliding bar for threshold adjustment
+- make a sliding bar for threshold adjustment 
 - Drag and drop imagesd
 - Custom Canny Algorithm from scratch 
 - Add an option to decide on the edge detector method, this way I can compare and contract --> make a separate page for each detector 
