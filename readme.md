@@ -23,10 +23,12 @@ Plan:
 
 - Threshold Parameters: Be able to adjust thresholding on detection (Done)
 
-- Side by Side Detection: visualize two images side by side, be able to adjust params for this. (Done)
+- Side by Side Detection: visualize two images side by side, be able to adjust params for this. (Done) 6/28
 
-- 
+- 7/1 I want to add a Slider to visualize real time thresholding
 
+
+#maybe mkae two seperate pages 
 ## Edge Cases / Issues to Fix
 
 - Error handling for when the file passsed is not an image

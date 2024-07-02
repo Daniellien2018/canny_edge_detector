@@ -1,11 +1,19 @@
 actionlib==1.14.0
+amqp==5.2.0
 angles==1.9.13
+async-timeout==4.0.3
+backports.zoneinfo==0.2.1
+billiard==4.2.0
 blinker==1.8.2
 bondpy==1.8.6
 camera-calibration==1.17.0
 camera-calibration-parsers==1.12.0
 catkin==0.8.10
+celery==5.4.0
 click==8.1.7
+click-didyoumean==0.3.1
+click-plugins==1.1.1
+click-repl==0.3.0
 contourpy==1.1.1
 controller-manager==0.20.0
 controller-manager-msgs==0.20.0
@@ -34,6 +42,7 @@ jinja2==3.1.4
 joint-state-publisher==1.15.1
 joint-state-publisher-gui==1.15.1
 kiwisolver==1.4.5
+kombu==5.3.7
 laser-geometry==1.6.7
 MarkupSafe==2.1.5
 matplotlib==3.7.5
@@ -42,6 +51,7 @@ numpy==1.24.4
 opencv-python==4.10.0.84
 packaging==24.1
 pillow==10.3.0
+prompt-toolkit==3.0.47
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 python-qt-binding==0.4.4
@@ -49,6 +59,7 @@ qt-dotgraph==0.4.2
 qt-gui==0.4.2
 qt-gui-cpp==0.4.2
 qt-gui-py-common==0.4.2
+redis==5.0.7
 resource-retriever==1.12.7
 rosbag==1.16.0
 rosboost-cfg==1.15.8
@@ -115,6 +126,10 @@ tf2-kdl==0.7.7
 tf2-py==0.7.7
 tf2-ros==0.7.7
 topic-tools==1.16.0
+typing-extensions==4.12.2
+tzdata==2024.1
+vine==5.1.0
+wcwidth==0.2.13
 werkzeug==3.0.3
 xacro==1.14.18
 zipp==3.19.2
