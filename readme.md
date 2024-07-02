@@ -25,7 +25,8 @@ Plan:
 
 - Side by Side Detection: visualize two images side by side, be able to adjust params for this. (Done) 6/28
 
-- 7/1 I want to add a Slider to visualize real time thresholding
+- 7/1 I want to add a Slider to visualize real time thresholding 7/2
+    This sort of works, but fundamentally not sure if the thresholding should be a point of concern--> I cant really tell the difference: This works the first time but doesnt wokr for the second 
 
 
 #maybe mkae two seperate pages 

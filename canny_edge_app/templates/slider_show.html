@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edge Detection Slider</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edge Detection Slider</h1>
+        <img id="image" src="data:image/jpeg;base64,{{ image }}" alt="Uploaded Image">
+        <div class="slider-container">
+            <div>
+                <label for="slider1">Threshold 1: <span id="label1">50</span></label>
+                <input type="range" id="slider1" min="0" max="255" value="50" step="1">
+            </div>
+            <div>
+                <label for="slider2">Threshold 2: <span id="label2">250</span></label>
+                <input type="range" id="slider2" min="0" max="255" value="250" step="1">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="location.href='/'">Back</button>
+            <button class="button" id="recompute">Recompute</button>
+        </div>
+    </div>
+    <script>
+        const imageElement = document.getElementById('image');
+        const originalImageBase64 = '{{ image }}';
+
+        // I currently have event listener for when sliders are moved, I need for when recompute hit
+
+        document.getElementById('recompute').addEventListener('click', function() {
+            const threshold1 = document.getElementById('slider1').value;
+            const threshold2 = document.getElementById('slider2').value;
+            updateImage(threshold1, threshold2)
+        })
+
+        document.getElementById('slider1').addEventListener('input', function() {
+            document.getElementById('label1').innerText = this.value;
+            // updateImage(this.value, document.getElementById('slider2').value);
+        });
+
+        document.getElementById('slider2').addEventListener('input', function() {
+            document.getElementById('label2').innerText = this.value;
+            // updateImage(document.getElementById('slider1').value, this.value);
+        });
+
+        function updateImage(threshold1, threshold2) {
+            fetch('/update_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    image: originalImageBase64,
+                    threshold1: threshold1,
+                    threshold2: threshold2
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                imageElement.src = `data:image/jpeg;base64,${data.image}`;
+            })
+            .catch(error => console.error('Error:', error));  
+        }
+    </script>
+</body>
+</html>
